@@ -78,8 +78,8 @@ namespace ServiceBusTopic
                     new CreateSubscriptionOptions(topicName, subscriptionHighPriorityRedOrders),
                     new CreateRuleOptions("HighPriorityRedOrders", new CorrelationRuleFilter() { Subject = "red", CorrelationId = "high" }));
 
-            delete resources
-            await adminClient.DeleteTopicAsync(topicName);
+           
+           // await adminClient.DeleteTopicAsync(topicName);
 
             Program app = new Program();
             await app.SendAndReceiveTestsAsync(connectionString);
